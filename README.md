@@ -10,6 +10,9 @@ Achieved by using [Regex](https://regexr.com/) to match the value in-between the
 
 Where as the `(.*?)` would be the value we are looking for.
 
+### Compilation
+Microsoft Windows executable (`.exe`) created using [WinPython tool](https://github.com/winpython/winpython).
+
 ### TODOs
 1. Extract `tagDescription` from the XML
 2. Extract `tagUniqueID` from the XML
