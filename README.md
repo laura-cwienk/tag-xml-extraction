@@ -1,8 +1,11 @@
-## Tag Xml Extraction
+## Tag XML Extraction
 Extract the `tagName` values from the XML generated using [Telerik](https://www.telerik.com/)
 
-#### Regular Expressions
-This was achieved by using Regex to match the string in-between the value:
+### Regular Expressions
+Achieved by using [Regex](https://regexr.com/) to match the value in-between the string:
 ```
-regex_pattern = r'&quot;Name&quot;:&quot;(.*?)&quot;,&quot;Description&quot;'
+&quot;Name&quot;:&quot;(.*?)&quot;,&quot;Description&quot;
 ```
+- *Check [this code line](https://github.com/Pedro-Rosa-10/tag-xml-extraction/blob/main/mainapp.py#L9) for more details*
+
+Where as the `(.*?)` would be the value we are looking for.
