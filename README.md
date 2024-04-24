@@ -1,12 +1,12 @@
 ## Tag XML Extraction
-Extract the `tagName` values from the XML generated using [Telerik](https://www.telerik.com/)
+Extract `tagName` and `tagID` values from a [Telerik](https://www.telerik.com/) generated XML.
 
 ### Regular Expressions
 Achieved by using [Regex](https://regexr.com/) to match the value in-between the string:
 ```
-&quot;Name&quot;:&quot;(.*?)&quot;,&quot;Description&quot;
+&quot;ID&quot;:(.*?),&quot;Name&quot;:&quot;(.*?)&quot;,&quot;Description&quot;
 ```
-- *Check [this code line](https://github.com/Pedro-Rosa-10/tag-xml-extraction/blob/main/mainapp.py#L9) for more details*
+- *Check [this code line](https://github.com/Pedro-Rosa-10/tag-xml-extraction/blob/main/mainapp.py#L17) for more details*
 
 Where as the `(.*?)` would be the value we are looking for.
 
@@ -15,5 +15,5 @@ Microsoft Windows executable (`.exe`) created using [WinPython tool](https://git
 
 ### TODOs
 1. Extract `tagDescription` from the XML
-2. Extract `tagUniqueID` from the XML
-3. Export to a `xlsx` file instead of `txt`
+2. Extract `tagTooltip` data from the XML
+3. Create new XML with new data to import
