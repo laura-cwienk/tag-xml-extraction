@@ -1,4 +1,4 @@
-import re, pprint
+import re
 
 def extract_values(xml_file):
     """ Extract unique tag ID and tag name from XML
@@ -50,11 +50,13 @@ def write_to_xml(xml_file):
 
     # Generate the array starting from 0 and incrementing by 1
     result_array = list(range(0, length + 1))
+    # result_array = ['0'] * length
 
     # Replace each match with a separate line where the number is incremented sequentially
     modified_xml_data = xml_data
     for i, match in enumerate(matches):
         modified_xml_data = modified_xml_data.replace(f'DataTableColNumber&quot;:{match},&quot;DataTableShowTagName', f'DataTableColNumber&quot;:{result_array[i] + 1},&quot;DataTableShowTagName', 1)
+        # modified_xml_data = modified_xml_data.replace(f'DataTableColNumber&quot;:{match},&quot;DataTableShowTagName', f'DataTableColNumber&quot;:{result_array[i]},&quot;DataTableShowTagName', 1)
 
     # Write the modified XML data back to the file
     with open(xml_file, 'w') as file:
@@ -65,9 +67,9 @@ xml_file = './data.xml'
 
 # Values before editing
 old_values = extract_values(xml_file)
-print(f"\nValues extracted:\n{pprint.pformat(old_values)}")
+print(f"\nOld values:\n{print(old_values)}")
 
 # Values after editing
 values = write_to_xml(xml_file)
 new_values = extract_values(xml_file)
-print(f"\nValues extracted:\n{pprint.pformat(new_values)}")
+print(f"\nNew values:\n{print(new_values)}")
