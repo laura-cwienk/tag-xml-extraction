@@ -1,1 +1,3 @@
-*
+#! Custom ignores
+.venv/
+__pycache__/
